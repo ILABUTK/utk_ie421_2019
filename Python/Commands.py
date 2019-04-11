@@ -3,7 +3,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="mati.engr.utk.edu",
   user="rzhou7",
-  passwd="PASSWORD",
+  passwd="rzhou7@421",
   database="rzhou7",
   port="33060"
 )
@@ -12,22 +12,22 @@ mycursor = mydb.cursor()
 
 
 ## create if not exists
-mycursor.execute("CREATE TABLE if not exists customers (name VARCHAR(255), address VARCHAR(255))")
+# mycursor.execute("CREATE TABLE if not exists customers (name VARCHAR(255), address VARCHAR(255))")
 
-mycursor.execute("SHOW TABLES")
+# mycursor.execute("SHOW TABLES")
 
-for x in mycursor:
-  print(x)
+# for x in mycursor:
+#   print(x)
 ###
 
 # ## insert one record
-# sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
-# val = ("John", "Highway 21")
-# mycursor.execute(sql, val)
+sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+val = ("John", "Highway 21")
+mycursor.execute(sql, val)
 
-# mydb.commit()
+mydb.commit()
 
-# print(mycursor.rowcount, "record inserted.")
+print(mycursor.rowcount, "record inserted.")
 # ###
 
 # ## add lots
@@ -68,12 +68,12 @@ for x in mycursor:
 
 
 ## fetch
-mycursor.execute("SELECT * FROM customers")
+# mycursor.execute("SELECT * FROM customers")
 
-myresult = mycursor.fetchall()
+# myresult = mycursor.fetchall()
 
-for x in myresult:
-  print(x)
+# for x in myresult:
+#   print(x)
 ###
 
 # ## del
