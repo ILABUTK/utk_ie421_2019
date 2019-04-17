@@ -24,7 +24,7 @@ new Vue({
                 .post('http://localhost:5500/api/contact', {name: this.name, email: this.email, subject: this.subject, message: this.message})
                 .then(response => (
                     this.msg = response.data.status,
-                    (this.msg == 'success') ? this.status = 'Submitted! Thanks.' : 'Something wrong'                                     
+                    (this.msg == 'success') ? this.status = 'Submitted! Thanks.' : ''                                     
                     )                    
                 )             
                 // .then(() => ((this.msg == 'success')?this.status = 'Submitted! Thanks.':''))
