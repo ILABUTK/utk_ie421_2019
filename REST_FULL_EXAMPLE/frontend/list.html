@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container mt-3">
+            <h2>List Group With Badges</h2>
+            <p>Combine .badge classes with utility/helper classes to add badges inside the list group:</p>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Inbox
+                    <span class="badge badge-primary badge-pill">12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Ads
+                    <span class="badge badge-primary badge-pill">50</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Junk
+                    <span class="badge badge-primary badge-pill">99</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container mt-3">
+            <h2>Demo:: List from static data</h2>
+            <p>Static Example</p>
+            <ul class="list-group">
+                <li v-for="item in company" class="list-group-item d-flex justify-content-between align-items-center">
+                    {{item.name}}
+                    <span class="badge badge-primary badge-pill">{{item.address}}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container mt-3">
+            <h2>Demo:: List from database</h2>
+            <p>Dynamic Example (Contact me)</p>
+            <ul class="list-group">
+                <div v-for="item in contact" class="card bg-dark text-white">
+                    <div class="card-body">
+                        Name: {{item.name}} <br />
+                        Email: {{item.email}} <br />
+                        Subject: {{item.subject}} <br />
+                        Message: {{item.message}} <br />
+                    </div>
+                </div>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h2>Image in a circle</h2>
+            <p>Now: imagine the url is from the database!</p>
+            <img :src='demo_image_url' class="rounded-circle" alt="Cinque Terre" width="236" height="236">
+        </div>
+    </div>
+
+    <!--XP ADDED-->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/js/list.js"></script>
+</body>
+
+</html>
