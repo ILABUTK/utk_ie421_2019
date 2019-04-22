@@ -13,12 +13,15 @@ new Vue({
                 }
             ],
             contact: [],
-            demo_image_url: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+            email: 'user1',
+            photos: [],
+            user_profile_photo: ''
         }
     },
 
     mounted() { 
-        this.getCompanies()       
+        this.getCompanies() 
+        this.getProfile()      
     },
     methods: {
         getCompanies () {            
@@ -32,6 +35,20 @@ new Vue({
                 .catch(function (error) {
                     console.log(error)
                 })            
+        },
+        getProfile() { //demo of getting an image path from db.
+            axios
+                .post('http://localhost:8080/api/profile', { email: this.email})
+                .then(response => (
+                    photos = response.data.profile,
+                    console.log(photos[0].photo),
+                    this.user_profile_photo = 'http://127.0.0.1:5500/frontend/images/' + photos[0].photo
+                )
+                )
+                .catch(function (error) {
+                    console.log(error);
+                })
+
         }
     }
 })
