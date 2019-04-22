@@ -41,7 +41,7 @@ new Vue({
                 .post('http://localhost:8080/api/profile', { email: this.email})
                 .then(response => (
                     photos = response.data.profile,
-                    console.log(photos[0].photo),
+                    // console.log(photos[0].photo),
                     this.user_profile_photo = 'http://127.0.0.1:5500/frontend/images/' + photos[0].photo
                 )
                 )
