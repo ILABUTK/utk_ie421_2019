@@ -9,7 +9,7 @@ $app->post('/api/upload', function ($request, $response, $args) { //POST example
 
     //$directory = __DIR__ . '/uploads';
 
-    $directory = '/Users/Utk1Lee/GitHub/utk_ie421_2019/Q4_Solution_BF/uploads';
+    $directory = '/Users/xli27/GitHub/utk_ie421_2019/Q4_Solution_BF/uploads';
     ///Users/Utk1Lee/GitHub/utk_ie421_2019/Q4_Solution_BF
 
     $uploadedFiles = $request->getUploadedFiles();
